@@ -1,1 +1,1 @@
-web: java -cp target\classes;"target\dependency\*" index.php
+web: java %JAVA_HOME% -cp target\classes;"target\dependency\*" home.html
