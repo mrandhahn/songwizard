@@ -157,6 +157,7 @@ function searchArtist(name, callback) {
           }) 
         .done(function(data) {
             info("");
+            $('#debug').append("<p>done </p>");
             callback(data);
         })
         .error( function() {
