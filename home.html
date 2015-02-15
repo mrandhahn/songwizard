@@ -28,8 +28,9 @@
         <button class="btn btn-sm" value="go" id="go" name="go"> Go </button>
     </div>
     <div id="info"> </div>
-    <div id="all_results"> </div>
     <div id="history"> </div>
+    <div id="debug"> </div>
+    <div id="all_results"> </div>
     <div id='footer'> 
         Powered by <a href="http://the.echonest.com">The Echo Nest</a> and <a href="http://spotify.com">Spotify</a>. 
     </div>
@@ -171,6 +172,7 @@ function newArtist() {
     $('#history').append("<p>"+artist+"</p>");
     searchArtist(artist, function(data) {
         console.log('search', data);
+        $('#debug').append("<p>console.log searched </p>");
         if (data.response.status.code == 0 && data.response.artists.length > 0) {
             var seed = data.response.artists[0];
             fetchSpotifyImagesForArtists([seed], function(seeds) {
