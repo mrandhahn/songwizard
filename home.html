@@ -147,6 +147,7 @@ function getBestImage(images, minSize) {
 
 function searchArtist(name, callback) {
     var url = config.echoNestHost + 'api/v4/artist/search';
+    $('#debug').append("<p>"+url+"</p>");
     $("#all_results").empty();
     info("Searching for artists ...");
     $.getJSON(url, {
@@ -172,7 +173,7 @@ function newArtist() {
     $('#history').append("<p>"+artist+"</p>");
     searchArtist(artist, function(data) {
         console.log('search', data);
-        $('#debug').append("<p>console.log searched </p>");
+        //$('#debug').append("<p>console.log searched </p>"); does not fire
         if (data.response.status.code == 0 && data.response.artists.length > 0) {
             var seed = data.response.artists[0];
             fetchSpotifyImagesForArtists([seed], function(seeds) {
