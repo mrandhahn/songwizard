@@ -1,1 +1,0 @@
-web: java %JAVA_HOME% -cp target\classes;"target\dependency\*" index.php
