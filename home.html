@@ -162,6 +162,7 @@ function searchArtist(name, callback) {
             'limit' : true,
           }) 
         .done(function(data) {
+        $('#debug').append("<p>Done searching</p>");
             info("");
             callback(data);
         })
