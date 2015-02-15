@@ -152,6 +152,7 @@ $('#debug').append("<p>Getting best image</p>");
 
 function searchArtist(name, callback) {
     var url = config.echoNestHost + 'api/v4/artist/search';
+    $('#debug').append("<p>Searching artists</p>");
     $("#all_results").empty();
     info("Searching for artists ...");
     $.getJSON(url, {
