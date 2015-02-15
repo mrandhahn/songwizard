@@ -89,12 +89,14 @@ function fetchSpotifyImagesForArtists(artists, callback) {
 
 
 function showArtists(seed, similars) {
+	$('#debug').append("<p>Showing artists</p>");
     info("");
     console.log('show artists', seed, similars);
     showSimilars(seed, similars);
 }
 
 function showSimilars(seed, similars) {
+	$('#debug').append("<p>Showing similar artists</p>");
     var div = $("<div>");
     div.append($("<h1>").text("Artists Similar to " + seed.name));
     div.addClass('similars');
@@ -109,6 +111,7 @@ function showSimilars(seed, similars) {
 
 function getArtistDiv(artist) {
     var image = getBestImage(artist.spotifyArtistInfo.images, 600);
+    $('#debug').append("<p>Getting Artist Div</p>");
     if (image) {
         var adiv = $("<div>");
         adiv.addClass('artist');
@@ -132,6 +135,7 @@ function getArtistDiv(artist) {
 }
 
 function getBestImage(images, minSize) {
+$('#debug').append("<p>Getting best image</p>");
     var best = null;
     if (images.length > 0) {
         best = images[0];
@@ -168,12 +172,14 @@ function searchArtist(name, callback) {
 
 function newArtist() {
     var artist = $("#artist").val();
-
+	
     console.log('searching for', artist);
     searchArtist(artist, function(data) {
+    $('#debug').append("<p>Starting searchArtist</p>");
         console.log('search', data);
         if (data.response.status.code == 0 && data.response.artists.length > 0) {
             var seed = data.response.artists[0];
+            $('#debug').append("<p>Data response positive</p>");
             fetchSpotifyImagesForArtists([seed], function(seeds) {
                 fetchSimilarArtists(seeds[0], function(similars) {
                     fetchSpotifyImagesForArtists(similars, function(similars) {
