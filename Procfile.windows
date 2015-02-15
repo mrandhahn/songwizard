@@ -1,1 +1,1 @@
-web: java -cp target\classes;"target\dependency\*" home.html
+web: java -cp target\classes;"target\dependency\*"
