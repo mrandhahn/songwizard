@@ -50,7 +50,7 @@ function fetchSimilarArtists(artist, callback) {
     $.getJSON(url, { 
             'api_key': config.apiKey,
             'id' : artist.id,
-            'min_results' : 10,
+            'results' : 10,
             'bucket': [ 'id:' + config.spotifySpace], 
             'limit' : true,
           }) 
