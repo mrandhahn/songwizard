@@ -112,7 +112,7 @@ function getArtistDiv(artist) {
     if (image) {
         var adiv = $("<div>");
         adiv.addClass('artist');
-        adiv.append($("<h2>").text(artist.name));
+        adiv.append($("<h2 class="title">").text(artist.name));
         
         var img = $("<img>");
         img.attr('src', image.url);
@@ -199,7 +199,7 @@ function initUI() {
         }
     });
     $("#artist").on("click", function(){
-    	var h = $(this).children("h2").text();
+    	var h = $(this).children("#title").text();
     	$("#history").append("<p>"+h+"</p>");
     	$("#debug").append("<p>"+h+"</p>");
     });
