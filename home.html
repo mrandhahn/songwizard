@@ -199,6 +199,7 @@ function initUI() {
     });
     $("#artist").on("click", function(){
     	var h = $(this).children('h2').innerHTML;
+    	console.log(h);
     	$("#history").append("<p>"+h+"</p>");
     });
     $("#go").on("click", function() {
