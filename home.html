@@ -29,7 +29,6 @@
     </div>
     <div id="info"> </div>
     <div id="history"> </div>
-    <div id="debug"> </div>
     <div id="all_results"> </div>
     <div id='footer'> 
         Powered by <a href="http://the.echonest.com">The Echo Nest</a> and <a href="http://spotify.com">Spotify</a>. 
@@ -112,7 +111,7 @@ function getArtistDiv(artist) {
     if (image) {
         var adiv = $("<div>");
         adiv.addClass('artist');
-        adiv.append($("<h2 class="title">").text(artist.name));
+        adiv.append($("<h2>").text(artist.name));
         
         var img = $("<img>");
         img.attr('src', image.url);
@@ -199,9 +198,8 @@ function initUI() {
         }
     });
     $("#artist").on("click", function(){
-    	var h = $(this).children("#title").text();
+    	var h = $(this).children("h2").text();
     	$("#history").append("<p>"+h+"</p>");
-    	$("#debug").append("<p>"+h+"</p>");
     });
     $("#go").on("click", function() {
         newArtist();
