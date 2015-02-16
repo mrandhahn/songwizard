@@ -28,7 +28,7 @@
         <button class="btn btn-sm" value="go" id="go" name="go"> Go </button>
     </div>
     <div id="info"> </div>
-    <div id="history"> </div>
+    <div id="history"><p>Previous searches:</p> </div>
     <div id="all_results"> </div>
     <div id='footer'> 
         Powered by <a href="http://the.echonest.com">The Echo Nest</a> and <a href="http://spotify.com">Spotify</a>. 
@@ -169,7 +169,6 @@ function searchArtist(name, callback) {
 
 function newArtist() {
     var artist = $("#artist").val();
-	$("#history").append("<p>"+artist+"</p>");
     console.log('searching for', artist);
     searchArtist(artist, function(data) {
         console.log('search', data);
