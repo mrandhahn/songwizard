@@ -112,6 +112,7 @@ function getArtistDiv(artist) {
         var adiv = $("<div>");
         adiv.addClass('artist');
         adiv.append($("<h2>").text(artist.name));
+        
         var img = $("<img>");
         img.attr('src', image.url);
         adiv.append(img);
@@ -197,7 +198,8 @@ function initUI() {
         }
     });
     $("#artist").on("click", function(){
-    	newArtist();
+    	var h = $(this).children('h2').innerHTML;
+    	$("#history").append("<p>"+h+"</p>");
     });
     $("#go").on("click", function() {
         newArtist();
