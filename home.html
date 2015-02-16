@@ -197,7 +197,7 @@ function initUI() {
         }
     });
     $("#artist").on("click", function(){
-    	newArtist();
+    	$("#history").append("<p>"+artist+"</p>");
     });
     $("#go").on("click", function() {
         newArtist();
