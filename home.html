@@ -90,12 +90,7 @@ function fetchSpotifyImagesForArtists(artists, callback) {
 
 function showArtists(seed, similars) {
     info("");
-    if($("$history").contains(seed.name)){
-    	
-    }
-    else {
-    	$("#history").append("<p>"+seed.name+"</p>");
-    }
+    $("#history").append("<p>"+seed.name+"</p>");
     console.log('show artists', seed, similars);
     showSimilars(seed, similars);
 }
