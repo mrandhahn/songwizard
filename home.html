@@ -89,6 +89,7 @@ function fetchSpotifyImagesForArtists(artists, callback) {
 
 function showArtists(seed, similars) {
     info("");
+    $("#history").append("<p>"+seed+"</p>");
     console.log('show artists', seed, similars);
     showSimilars(seed, similars);
 }
@@ -196,11 +197,6 @@ function initUI() {
         if (evt.keyCode == 13) {
             newArtist();
         }
-    });
-    $("#similars").on("click", function(){
-    	console.log("AAAAA");
-    	var h = $(":header").text();
-    	$("#history").append("<p>"+h+"</p>");
     });
     $("#go").on("click", function() {
         newArtist();
